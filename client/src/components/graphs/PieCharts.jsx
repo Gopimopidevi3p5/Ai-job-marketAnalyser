@@ -10,16 +10,10 @@ import {
 import { dataContextAPI } from "../DataContextProvider";
 
 function PieCharts() {
-  const { chartData, colors, graphType } = useContext(dataContextAPI);
+  const { chartData, colors } = useContext(dataContextAPI);
 
   return (
-    <div
-      className={`w-full ${
-        graphType === "Experience" || graphType === "Salary (LPA)"
-          ? "h-[700px]"
-          : "h-[500px]"
-      }`}
-    >
+    <div className={`w-full h-screen`}>
       <ResponsiveContainer width="100%" height="100%">
         <PieChart>
           <Pie
