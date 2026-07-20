@@ -24,7 +24,7 @@ function Graphs() {
     }
   }, []);
   return (
-    <div className="min-h-screen p-6 bg-gray-100">
+    <div className="h-screen p-6 bg-gray-100">
       {/* Dropdown */}
       <div className="mb-6">
         <DropBox />
@@ -79,10 +79,10 @@ function Graphs() {
         </section>
 
         {/* Pie Chart */}
-        <section className="w-[40%] bg-white rounded-xl shadow-lg p-5">
+        <section className="w-[40%] h-full bg-white rounded-xl shadow-lg p-5 h-screen">
           <h2 className="text-2xl font-bold text-center mb-5">Distribution</h2>
 
-          <div>
+          <div className="w-full h-full">
             <PieCharts />
           </div>
         </section>

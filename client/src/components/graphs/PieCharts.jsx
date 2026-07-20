@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import {
   PieChart,
   Pie,
@@ -13,7 +13,7 @@ function PieCharts() {
   const { chartData, colors } = useContext(dataContextAPI);
 
   return (
-    <div className={`w-full h-screen`}>
+    <div className={`w-full h-full`}>
       <ResponsiveContainer width="100%" height="100%">
         <PieChart>
           <Pie

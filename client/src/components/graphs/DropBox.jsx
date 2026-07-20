@@ -70,7 +70,7 @@ function DropBox() {
           <option value="Skills">Skills</option> */}
           {resultData.length > 0 &&
             Object.keys(resultData[0])
-              .filter((el) => el !== "Apply Link")
+              .filter((el) => el !== "Apply Link" && el !== "Job Description")
               .map((el) => (
                 <option key={el} value={el}>
                   {el}
