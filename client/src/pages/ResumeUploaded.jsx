@@ -29,7 +29,7 @@ function ResumeUploaded() {
         formData.append("resume", file);
 
         const result = await axios.post(
-         "https://ai-job-marketanalyser.onrender.com/resume",
+         "https://ai-job-market-analyser-proj.vercel.app/resume",
           formData,
         );
 

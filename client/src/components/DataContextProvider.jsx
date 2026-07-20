@@ -16,7 +16,9 @@ function DataContextProvider() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const result = await axios.get("https://ai-job-marketanalyser.onrender.com/get-data");
+        const result = await axios.get(
+          "https://ai-job-market-analyser-proj.vercel.app/get-data",
+        );
 
         const data = result.data.data;
 
@@ -41,7 +43,7 @@ function DataContextProvider() {
 
   const getChartData = useCallback(
     (key) => {
-      let highestJobs
+      let highestJobs;
 
       if (key) {
         const count = resultData.reduce((acc, item) => {
