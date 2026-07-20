@@ -62,7 +62,7 @@ const mistral = new Mistral({
   apiKey: process.env.MISTRAL_API_KEY,
 });
 
-// Upload Excel
+// Upload Excel upload
 
 app.post("/upload", uploaded.single("excel"), async (req, res) => {
   try {
