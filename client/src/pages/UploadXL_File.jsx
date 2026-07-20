@@ -31,7 +31,7 @@ function UploadXL_File() {
       formData.append("excel", file);
 
       const result = await axios.post(
-        "http://localhost:4000/upload",
+          "https://ai-job-marketanalyser.onrender.com/upload",
         formData,
         {
           headers: {

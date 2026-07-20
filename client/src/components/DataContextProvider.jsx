@@ -16,7 +16,7 @@ function DataContextProvider() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const result = await axios.get("http://localhost:4000/get-data");
+        const result = await axios.get("https://ai-job-marketanalyser.onrender.com/get-data");
 
         const data = result.data.data;
 
