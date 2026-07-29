@@ -26,8 +26,7 @@ const uploaded = multer({
 });
 
 app.use(express.json());
-app.use(cors({ origin: "https://ai-job-market-analyser-rvpj.vercel.app/" }));
-
+app.use(cors({ origin: "https://ai-job-market-analyser-rvpj.vercel.app" }));
 mongoose
   .connect(process.env.MONGO_URL)
   .then(() => {
