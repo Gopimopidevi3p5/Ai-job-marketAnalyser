@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
-
+const API_URL=import.meta.env.VITE_API_URL
 function ResumeUploaded() {
   const [file, setFile] = useState(null);
   const [jobs, setJobs] = useState([]);
@@ -29,7 +29,7 @@ function ResumeUploaded() {
         formData.append("resume", file);
 
         const result = await axios.post(
-         "https://ai-job-market-analyser-proj.vercel.app/resume",
+         `${API_URL}/resume`,
           formData,
         );
 

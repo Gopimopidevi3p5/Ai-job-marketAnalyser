@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-
+const API_URL = import.meta.env.VITE_API_URL;
 function AllJobs() {
   const [jobs, setJobs] = useState([]);
   const [search, setSearch] = useState("");
@@ -13,7 +13,7 @@ function AllJobs() {
   useEffect(() => {
     async function getJobs() {
       try {
-        const result = await axios.get("http://localhost:4000/get-data");
+        const result = await axios.get(`${API_URL}/get-data`);
 
         setJobs(result.data.data);
         console.log(result.data.data);

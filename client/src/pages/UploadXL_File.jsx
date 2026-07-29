@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useRef, useState } from "react";
-
+const API_URL = import.meta.env.VITE_API_URL;
 function UploadXL_File() {
   const [file, setFile] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -31,7 +31,7 @@ function UploadXL_File() {
       formData.append("excel", file);
 
       const result = await axios.post(
-          "https://ai-job-market-analyser-proj.vercel.app/upload",
+          `${API_URL}/upload`,
         formData,
         {
           headers: {

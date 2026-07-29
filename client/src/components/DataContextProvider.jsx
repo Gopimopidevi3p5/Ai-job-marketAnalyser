@@ -1,6 +1,7 @@
 import axios from "axios";
 import { createContext, useCallback, useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
+const API_URL = import.meta.env.VITE_API_URL;
 
 export const dataContextAPI = createContext();
 
@@ -17,7 +18,7 @@ function DataContextProvider() {
     async function fetchData() {
       try {
         const result = await axios.get(
-          "https://ai-job-market-analyser-proj.vercel.app/get-data",
+          `${API_URL}/get-data`,
         );
 
         const data = result.data.data;
