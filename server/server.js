@@ -264,9 +264,12 @@ app.get("/get-data", async (req, res) => {
     });
   }
 });
-
+app.get("/", (req, res) => {
+  res.json({
+    message: "Job Market Analyzer API is running",
+  });
+});
 const PORT = process.env.PORT || 4000;
-
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
