@@ -26,7 +26,18 @@ const uploaded = multer({
 });
 
 app.use(express.json());
-app.use(cors({origin:"https://ai-job-market-analyser-proj-git-master-ai-interview-iq.vercel.app"}))
+app.use(
+  cors({
+    origin: process.env.FRONTEND_URL,
+    allowedHeaders: [
+      "Content-Type",
+      "Authorization",
+      "X-Requested-With",
+      "X-Custom-Header",
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+  }),
+);
 mongoose
   .connect(process.env.MONGO_URL)
   .then(() => {
@@ -255,6 +266,7 @@ app.get("/get-data", async (req, res) => {
     const result = await Job.find();
 
     const jobs = result.flatMap((item) => item.excelSheetData);
+    console.log(jobs);
 
     res.json({
       message: "Data fetched successfully",

@@ -11,6 +11,10 @@ function DropBox() {
     resultData,
   } = useContext(dataContextAPI);
 
+  console.log(dataContextAPI, "DTAT FROM CONTEXT");
+
+  
+
   return (
     <div className="grid grid-cols-3 gap-3">
       <section>

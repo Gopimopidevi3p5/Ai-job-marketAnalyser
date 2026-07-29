@@ -1,6 +1,7 @@
 import axios from "axios";
 import { createContext, useCallback, useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
+import { api } from "../utils/api";
 const API_URL = import.meta.env.VITE_API_URL;
 
 export const dataContextAPI = createContext();
@@ -17,8 +18,8 @@ function DataContextProvider() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const result = await axios.get(
-          `${API_URL}/get-data`,
+        const result = await api.get(
+          `/get-data`
         );
 
         const data = result.data.data;
