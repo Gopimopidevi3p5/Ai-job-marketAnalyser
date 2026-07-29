@@ -26,7 +26,21 @@ const uploaded = multer({
 });
 
 app.use(express.json());
-app.use(cors({ origin: "https://ai-job-market-analyser-proj.vercel.app" }));
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (
+        !origin ||
+        origin.endsWith(".vercel.app") ||
+        origin === "https://ai-job-market-analyser-rvpj.vercel.app"
+      ) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+  }),
+);
 mongoose
   .connect(process.env.MONGO_URL)
   .then(() => {
