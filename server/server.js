@@ -29,6 +29,13 @@ app.use(express.json());
 app.use(
   cors({
     origin: process.env.FRONTEND_URL,
+    allowedHeaders: [
+      "Content-Type",
+      "Authorization",
+      "X-Requested-With",
+      "X-Custom-Header",
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
   }),
 );
 mongoose
