@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useRef, useState } from "react";
-const API_URL = import.meta.env.VITE_API_URL;
+import { api } from "../utils/api";
 function UploadXL_File() {
   const [file, setFile] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -30,8 +30,8 @@ function UploadXL_File() {
       const formData = new FormData();
       formData.append("excel", file);
 
-      const result = await axios.post(
-          `${API_URL}/upload`,
+      const result = await api.post(
+          `/upload`,
         formData,
         {
           headers: {
